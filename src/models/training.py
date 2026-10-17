@@ -33,7 +33,8 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(
     model, 
     name = "trained_model",
-    skops_trusted_types=["sklearn.tree._tree.Tree"]
+    skops_trusted_types=["sklearn.tree._tree.Tree"],
+    registered_model_name="silica_concentrate_model"
 )
 
     # Save model locally too

@@ -89,8 +89,8 @@ stages:
       size: 91
     - path: src/models/training.py
       hash: md5
-      md5: 5b529a7f6f4183721c552c3bec65896a
-      size: 1300
+      md5: b4801242216a82db86381c0937e6af31
+      size: 1354
     outs:
     - path: models/trained_model.pkl
       hash: md5
