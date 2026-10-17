@@ -1,3 +1,5 @@
 /venv
 /clean_data.csv
-/data
+/data/processed_data
+/data/raw_data/raw.csv
+/data/prediction.csv

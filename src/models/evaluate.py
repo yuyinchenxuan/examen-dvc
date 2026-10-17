@@ -2,8 +2,14 @@ import pandas as pd
 import pickle
 import json
 import os
+import mlflow
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import numpy as np
+
+# DagHub MLflow setup
+mlflow.set_tracking_uri("https://dagshub.com/yuyinchenxuan/examen-dvc.mlflow")
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'yuyinchenxuan'
+os.environ['MLFLOW_TRACKING_PASSWORD'] = '5e74af8de8bac0418b22d7ee9f1d70af4ba1449d'
 
 # Load scaled test data
 X_test = pd.read_csv('data/processed_data/X_test_scaled.csv')
@@ -23,6 +29,13 @@ mse = mean_squared_error(y_test, y_pred)
 rmse = np.sqrt(mse)
 mae = mean_absolute_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
+
+with mlflow.start_run():
+    # Log metrics to MLflow
+    mlflow.log_metric("MSE", mse)
+    mlflow.log_metric("RMSE", rmse)
+    mlflow.log_metric("MAE", mae)
+    mlflow.log_metric("R2", r2)
 
 # Print metrics
 print(f"\nModel Evaluation:")
