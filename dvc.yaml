@@ -44,5 +44,7 @@ stages:
       - models/trained_model.pkl
     outs:
       - data/predictions.csv
-      - metrics/scores.json
+    metrics:
+      - metrics/scores.json:
+          cache: false
   
