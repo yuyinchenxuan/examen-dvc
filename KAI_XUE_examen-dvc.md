@@ -1,4 +1,4 @@
 - **Last Name:** XUE
 - **First Name:** Kai
 - **Email:** k.kaixue@gmail.com
-- **DagHub Repository:** https://dagshub.com/yuyinchenxuan/examen-dvc.dvc
+- **DagHub Repository:** https://dagshub.com/yuyinchenxuan/examen-dvc
