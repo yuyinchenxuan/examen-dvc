@@ -7,9 +7,11 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import numpy as np
 
 # DagHub MLflow setup
-mlflow.set_tracking_uri("https://dagshub.com/yuyinchenxuan/examen-dvc.mlflow")
 os.environ['MLFLOW_TRACKING_USERNAME'] = 'yuyinchenxuan'
 os.environ['MLFLOW_TRACKING_PASSWORD'] = '5e74af8de8bac0418b22d7ee9f1d70af4ba1449d'
+
+mlflow.set_tracking_uri("https://dagshub.com/yuyinchenxuan/examen-dvc.mlflow")
+mlflow.set_experiment("silica_flotation")
 
 # Load scaled test data
 X_test = pd.read_csv('data/processed_data/X_test_scaled.csv')
